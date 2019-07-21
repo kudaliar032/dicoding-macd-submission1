@@ -1,8 +1,6 @@
 <?php
-include "environment.php";
-
 try {
-    $conn = new PDO("sqlsrv:server = tcp:".$_ENV['HOST'].",1433; Database = ".$_ENV['DB'], $_ENV['UNAME'], $_ENV['PASS']);
+    $conn = new PDO("sqlsrv:server = tcp:".$_ENV['DB_HOST'].",1433; Database = ".$_ENV['DB_DATABASE'], $_ENV['DB_USER'], $_ENV['DB_PASS']);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $e) {
