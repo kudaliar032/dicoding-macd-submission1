@@ -1,4 +1,9 @@
 <?php
+require "vendor/autoload.php";
+
+$dotenv = Dotenv\Dotenv::create(__DIR__);
+$dotenv->load();
+
 try {
     $conn = new PDO("sqlsrv:server = tcp:".$_ENV['DB_HOST'].",1433; Database = ".$_ENV['DB_DATABASE'], $_ENV['DB_USER'], $_ENV['DB_PASS']);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
