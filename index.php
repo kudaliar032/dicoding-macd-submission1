@@ -78,6 +78,8 @@ if (isset($_POST['submit'])) {
                 <input name="phone" type="number" class="form-control" id="phoneinput" placeholder="Masukan nomor ponsel" required>
             </div>
             <button name="submit" type="submit" class="btn btn-primary">Kirim</button>
+
+            <h4 class="mt-5">PHP Version: <b><?php echo phpversion(); ?></b></h4>
         </form>
     </div>
 
